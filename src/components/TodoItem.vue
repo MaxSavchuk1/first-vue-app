@@ -33,10 +33,12 @@ li {
   border: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5rem 2rem;
   margin: 0 0 1rem;
 }
 .rm {
+  height: 22px;
   background: red;
   color: #fff;
   border-radius: 50%;

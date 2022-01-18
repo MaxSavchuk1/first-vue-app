@@ -1,11 +1,20 @@
 <template>
-  <div>
+  <div class="homePageContainer">
     <h2>Home page</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aperiam,
-      voluptatibus aut temporibus iusto mollitia quo nemo architecto dolorem
-      voluptate.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa hic
+      voluptatem maiores modi dignissimos cumque expedita totam reiciendis
+      vitae. Dolorem minima, pariatur error minus mollitia repellendus sed
+      facilis tempore dicta ex qui soluta temporibus possimus quidem deserunt
+      omnis asperiores voluptatem quisquam vero ab aliquid doloribus officiis
+      veniam quia? Quam, possimus!
     </p>
-    <router-link to="/todos">Todos</router-link>
   </div>
 </template>
+
+<style scoped>
+.homePageContainer {
+  max-width: 80%;
+  width: 1000px;
+}
+</style>

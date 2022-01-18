@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <h2>Todo app</h2>
-    <router-link to="/">Home</router-link>
+  <div class="todosContainer">
+    <h2>Todos</h2>
     <hr />
     <AddTodo @add-todo="addTodo" />
     <hr />
@@ -70,3 +69,19 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.todosContainer {
+  width: 80%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+.todosContainer hr {
+  width: 100%;
+}
+.todosContainer > select {
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+</style>

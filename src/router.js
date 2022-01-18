@@ -15,5 +15,9 @@ export default new Router({
       path: "/todos",
       component: () => import("./views/Todos.vue"),
     },
+    {
+      path: "/posts",
+      component: () => import("./views/Posts.vue"),
+    },
   ],
 });
