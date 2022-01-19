@@ -1,9 +1,9 @@
 <template>
   <v-container>
     <v-row class="d-flex">
-      <v-text-field v-model="title" />
-      <v-file-input v-model="img" />
-      <v-btn @click="addPhoto">Add</v-btn>
+      <v-text-field v-model="title" label="Input title here" />
+      <v-file-input v-model="img" label="Select image" />
+      <v-btn @click="addPhoto" elevation="10">Add</v-btn>
     </v-row>
   </v-container>
 </template>

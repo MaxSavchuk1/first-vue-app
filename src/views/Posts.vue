@@ -35,6 +35,8 @@ export default {
 
 <style scoped>
 .postsContainer {
+  width: 80%;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,9 +49,15 @@ export default {
   margin-bottom: 1rem;
   padding: 10px;
 }
+.post > h3 {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
 hr {
   width: 100%;
-  margin-bottom: 15px;
-  border: 1px solid green;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  border: 1px solid indigo;
 }
 </style>

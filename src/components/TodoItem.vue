@@ -5,9 +5,9 @@
       <strong>{{ index + 1 }}</strong>
       {{ todo.title | uppercase }}
     </span>
-    <button class="rm" v-on:click="$emit('remove-todo', todo.id)">
-      &times;
-    </button>
+    <v-btn icon color="black" v-on:click="$emit('remove-todo', todo.id)"
+      ><v-icon>mdi-delete</v-icon></v-btn
+    >
   </li>
 </template>
 
@@ -36,13 +36,6 @@ li {
   align-items: center;
   padding: 0.5rem 2rem;
   margin: 0 0 1rem;
-}
-.rm {
-  height: 22px;
-  background: red;
-  color: #fff;
-  border-radius: 50%;
-  font-weight: bold;
 }
 input {
   margin-right: 1rem;

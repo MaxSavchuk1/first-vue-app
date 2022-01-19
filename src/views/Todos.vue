@@ -4,11 +4,13 @@
     <hr />
     <AddTodo @add-todo="addTodo" />
     <hr />
-    <select v-model="filter">
-      <option value="all">All</option>
-      <option value="completed">Completed</option>
-      <option value="not-completed">Not Completed</option>
-    </select>
+    <v-select
+      :items="items"
+      label="Filter"
+      outlined
+      v-model="filter"
+      class="filter"
+    ></v-select>
     <Loader v-if="loading" />
     <TodoList
       v-else-if="filteredTodos.length"
@@ -29,7 +31,8 @@ export default {
     return {
       todos: [],
       loading: true,
-      filter: "all",
+      filter: "",
+      items: ["all", "completed", "not-completed"],
     };
   },
   components: { TodoList, AddTodo, Loader },
@@ -48,7 +51,7 @@ export default {
   // },
   computed: {
     filteredTodos() {
-      if (this.filter === "all") {
+      if (this.filter === "all" || this.filter === "") {
         return this.todos;
       }
       if (this.filter === "completed") {
@@ -79,9 +82,12 @@ export default {
 }
 .todosContainer hr {
   width: 100%;
+  margin: 15px 0;
+  border: 1px solid indigo;
 }
-.todosContainer > select {
+.filter {
+  width: 100%;
+  max-width: 300px;
   margin-right: auto;
-  margin-bottom: 16px;
 }
 </style>

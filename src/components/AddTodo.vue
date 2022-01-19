@@ -1,7 +1,9 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <input type="text" v-model="title" />
-    <button type="submit">Create</button>
+    <v-text-field label="Input your task here" v-model="title"></v-text-field>
+    <v-btn class="mx-2" fab dark small color="indigo" type="submit">
+      <v-icon dark> mdi-plus </v-icon>
+    </v-btn>
   </form>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
   <form @submit.prevent="submit">
-    <input type="text" placeholder="TITLE" v-model="title" />
-    <input type="text" placeholder="CONTENT" v-model="body" />
-    <button type="submit">Create post</button>
+    <v-text-field label="Input title here" v-model="title"></v-text-field>
+    <v-text-field label="Input body here" v-model="body"></v-text-field>
+    <v-btn outlined color="indigo" type="submit"> Create post </v-btn>
   </form>
 </template>
 
@@ -48,13 +48,5 @@ input {
 }
 button {
   width: 100%;
-  background-color: #eee;
-  border: 1px solid #000;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: darkgreen;
 }
 </style>
