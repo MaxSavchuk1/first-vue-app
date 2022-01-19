@@ -19,5 +19,9 @@ export default new Router({
       path: "/posts",
       component: () => import("./views/Posts.vue"),
     },
+    {
+      path: "/photos",
+      component: () => import("./views/Photos.vue"),
+    },
   ],
 });

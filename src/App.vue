@@ -1,19 +1,20 @@
 <template>
-  <div id="app">
-    <h1>My first VUE app</h1>
-    <div class="links">
-      <router-link to="/">Home</router-link>
-      <router-link to="/todos">Todos</router-link>
-      <router-link to="/posts">Posts</router-link>
-    </div>
-    <hr />
+  <v-app id="app">
+    <Navbar />
     <router-view />
-  </div>
+  </v-app>
 </template>
+
+<script>
+import Navbar from "@/components/Navbar";
+export default {
+  components: { Navbar },
+};
+</script>
 
 <style>
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -21,26 +22,9 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-#app > hr {
+#app .v-application--wrap {
   width: 100%;
-}
-.links {
-  display: flex;
-  justify-content: center;
-}
-.links a {
-  text-decoration: none;
-  text-transform: uppercase;
-  margin: 0 15px;
-  font-weight: bold;
-  color: blue;
-}
-.links a:visited {
-  color: blue;
+  align-items: center;
 }
 </style>
