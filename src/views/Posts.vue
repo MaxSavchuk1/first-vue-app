@@ -3,9 +3,9 @@
     <div>
       <h2>Posts: {{ postsCount }}</h2>
     </div>
-    <PostForm />
+    <post-form />
     <hr />
-    <Loader v-if="allPosts.isFetching" />
+    <loader v-if="allPosts.isFetching" />
     <div
       class="post"
       v-for="post in allPosts.posts"
@@ -20,17 +20,17 @@
 </template>
 
 <script>
-import Loader from "@/components/Loader";
-import { mapGetters, mapActions } from "vuex";
-import PostForm from "@/components/PostForm";
+import Loader from '@/components/Loader'
+import { mapGetters, mapActions } from 'vuex'
+import PostForm from '@/components/PostForm'
 export default {
-  computed: mapGetters(["allPosts", "postsCount", "validPosts"]),
-  methods: mapActions(["fetchPosts"]),
-  async mounted() {
-    this.fetchPosts();
+  computed: mapGetters(['allPosts', 'postsCount', 'validPosts']),
+  methods: mapActions(['fetchPosts']),
+  async mounted () {
+    this.fetchPosts()
   },
-  components: { Loader, PostForm },
-};
+  components: { Loader, PostForm }
+}
 </script>
 
 <style scoped>
