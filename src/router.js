@@ -28,6 +28,11 @@ export default new Router({
     {
       path: '/photos',
       component: () => import('./views/Photos.vue')
+    },
+    {
+      path: '/page-not-found',
+      alias: '*',
+      component: { render: h => h('h2', ['Error 404 - Not Found!']) }
     }
   ]
 })
