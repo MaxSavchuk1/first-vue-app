@@ -5,10 +5,13 @@ import store from './store'
 import vuetify from '@/plugins/vuetify'
 import axios from 'axios'
 import api from './plugins/api'
+import intersection from './directives/intersection'
 
 Vue.prototype.axios = axios
 
 Vue.use(api)
+
+Vue.directive('intersection', intersection)
 
 Vue.config.productionTip = false
 

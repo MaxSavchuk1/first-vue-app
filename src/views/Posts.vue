@@ -18,7 +18,10 @@
         <div><span>OPEN</span></div>
       </div>
     </div>
-    <p v-else>No posts</p>
+    <p v-else-if="!allPosts.posts.length && !allPosts.error">No posts</p>
+    <p v-else>Can't load posts. Try again latter</p>
+
+    <div v-intersection="fetchMorePosts" class="intersection"></div>
   </div>
 </template>
 
@@ -27,17 +30,24 @@ import Loader from '@/components/Loader'
 import { mapGetters, mapActions } from 'vuex'
 import PostForm from '@/components/PostForm'
 export default {
+  components: { Loader, PostForm },
+  data () {
+    return {
+      isShownDialog: false
+    }
+  },
   computed: mapGetters(['allPosts', 'postsCount', 'validPosts']),
   methods: {
-    ...mapActions(['fetchPosts']),
+    ...mapActions(['fetchPosts', 'fetchMorePosts']),
     clickHandler (id) {
       this.$router.push({ name: 'Post', params: { id } })
     }
   },
-  async mounted () {
-    this.fetchPosts(5)
-  },
-  components: { Loader, PostForm }
+  mounted () {
+    if (!this.postsCount) {
+      this.fetchPosts()
+    }
+  }
 }
 </script>
 
@@ -95,5 +105,11 @@ hr {
   margin-top: 20px;
   margin-bottom: 35px;
   border: 1px solid indigo;
+}
+.intersection {
+  visibility: hidden;
+  width: 100%;
+  border: 1px solid transparent;
+  margin-bottom: 5px;
 }
 </style>
